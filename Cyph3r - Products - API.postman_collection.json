@@ -10,6 +10,16 @@
 		{
 			"name": "Get Products",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|vGT5rxmzLBJj9RuLoVxGBQvfpi7AjQyt8vrlzf4ge8b5a4a4",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [
 					{
@@ -227,6 +237,65 @@
 					]
 				},
 				"description": "Eliminar un producto."
+			},
+			"response": []
+		},
+		{
+			"name": "GetCSRF-Cookie",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://prueba-ciph3r.test/sanctum/csrf-cookie",
+					"protocol": "http",
+					"host": [
+						"prueba-ciph3r",
+						"test"
+					],
+					"path": [
+						"sanctum",
+						"csrf-cookie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "XSRF-TOKEN=eyJpdiI6Iitrak91WEM4UzdyeHl6NnVCZzZZRlE9PSIsInZhbHVlIjoiZUdZWlg4TlNwaGJPSXpkL0QrWTJKdUJxQTVKL0JYLzI3bUdIeVZoa21WVnpnbjIrMUt6eGhLanplTzdPWXRlK0hoalFUOFVWa0VjV2xYSGhVWlZyZW5kcWtNYVkra0xYOHoyR0taUVJ5R3kyOHMxZjFLTEJMcXRpMHk5cmM4UEQiLCJtYWMiOiIxYjgwNDYyY2VlMDY0MTQ0ZGY4YWI3NTY0MGJjZmFlM2FmMzM2NjQ0ZGZlNzYwY2I0ODAzMTczNjI4MDA4ZGVhIiwidGFnIjoiIn0%3D; Path=/; Expires=Tue, 11 Mar 2025 18:00:50 GMT",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Administrator\",\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"Password1_\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://prueba-ciph3r.test/register",
+					"protocol": "http",
+					"host": [
+						"prueba-ciph3r",
+						"test"
+					],
+					"path": [
+						"register"
+					]
+				}
 			},
 			"response": []
 		}
