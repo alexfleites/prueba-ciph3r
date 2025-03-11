@@ -39,7 +39,7 @@ class ProductoResource extends Resource
                     ->numeric()
                     ->prefix('$'),
                 Forms\Components\Select::make('currency_id')
-                ->relationship('currency', 'name')
+                    ->relationship('currency', 'name')
                     ->required()
                     ->native(false)
                     ->createOptionForm(function ($form) {

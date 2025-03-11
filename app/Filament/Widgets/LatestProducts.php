@@ -2,15 +2,19 @@
 
 namespace App\Filament\Widgets;
 
+use App\Filament\Resources\ProductoResource;
 use Filament\Tables;
 use App\Models\Producto;
+use Filament\Actions\Action;
 use Filament\Tables\Table;
+use Filament\Tables\Actions;
+use Filament\Tables\Actions\ViewAction;
 use Filament\Widgets\TableWidget as BaseWidget;
 
 class LatestProducts extends BaseWidget
 {
     protected int | string | array $columnSpan = 'full';
-    
+
     public function table(Table $table): Table
     {
         return $table
@@ -36,6 +40,11 @@ class LatestProducts extends BaseWidget
                 Tables\Columns\TextColumn::make('manufacturing_cost')
                     ->numeric()
                     ->sortable(),
+            ])->headerActions([
+                Tables\Actions\Action::make('view')
+                    ->label('Crear tu primer Producto')
+                    ->visible(fn () => Producto::count() == 0)
+                    ->url(ProductoResource::getUrl('create'))
             ]);
     }
 }
