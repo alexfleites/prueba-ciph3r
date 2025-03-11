@@ -11,7 +11,13 @@
 			"name": "Get Products",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "http://prueba-ciph3r.test/api/products",
 					"protocol": "http",
@@ -32,7 +38,13 @@
 			"name": "Get Product",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "http://prueba-ciph3r.test/api/products/1",
 					"protocol": "http",
@@ -54,7 +66,13 @@
 			"name": "Get Product Prices",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "http://prueba-ciph3r.test/api/products/1/prices",
 					"protocol": "http",
@@ -77,7 +95,13 @@
 			"name": "Create Product",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\n    \"id\": 1,\n    \"name\": \"Producto D\",\n    \"description\": \"Descripción del Producto D\",\n    \"price\": 100,\n    \"currency_id\": 1,\n    \"tax_cost\": 10,\n    \"manufacturing_cost\": 60,\n    \"created_at\": \"2025-03-10T22:46:09.000000Z\",\n    \"updated_at\": \"2025-03-10T22:46:09.000000Z\"\n}",
@@ -88,7 +112,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://prueba-ciph3r.test/api/products/4",
+					"raw": "http://prueba-ciph3r.test/api/products",
 					"protocol": "http",
 					"host": [
 						"prueba-ciph3r",
@@ -96,8 +120,7 @@
 					],
 					"path": [
 						"api",
-						"products",
-						"4"
+						"products"
 					]
 				},
 				"description": "Crear un nuevo producto"
@@ -108,7 +131,13 @@
 			"name": "Update Product",
 			"request": {
 				"method": "PUT",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\n    \"price\": 250\n}",
@@ -139,7 +168,13 @@
 			"name": "Update Product Price",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\n    \"currency_id\": 1,\n    \"price\": 250\n}",
@@ -171,7 +206,13 @@
 			"name": "Delete Product",
 			"request": {
 				"method": "DELETE",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "http://prueba-ciph3r.test/api/products/4",
 					"protocol": "http",

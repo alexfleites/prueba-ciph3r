@@ -14,7 +14,7 @@ Route::post('/tokens/create', function (Request $request) {
     return ['token' => $token->plainTextToken];
 });
 
-Route::group(['prefix' => 'products'], function () {
+Route::group(['prefix' => 'products', 'middleware' => 'auth:sanctum'], function () {
     Route::get('/', [ProductoController::class, 'index']);
     Route::post('/', [ProductoController::class, 'store']);
     Route::get('/{id}', [ProductoController::class, 'show']);
@@ -23,4 +23,4 @@ Route::group(['prefix' => 'products'], function () {
     /** Producto Precio */
     Route::post('/{id}/prices', [ProductoController::class, 'storePrice']);
     Route::get('/{id}/prices', [ProductoController::class, 'showPrices']);
-})->middleware('auth:sanctum');
+});
