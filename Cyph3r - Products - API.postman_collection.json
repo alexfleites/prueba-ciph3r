@@ -1,7 +1,8 @@
 {
 	"info": {
 		"_postman_id": "c201870a-ec23-4d8f-ad2b-06cabc8fa118",
-		"name": "Cyph3r - Products",
+		"name": "Cyph3r - Products - API",
+		"description": "La API de Gestión de Productos proporciona una forma sencilla y efectiva de gestionar productos en un sistema de inventario. Su implementación es ideal para aplicaciones de comercio electrónico, sistemas de gestión de inventario y otras plataformas que requieren un manejo eficiente de productos.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "792934"
 	},
@@ -22,7 +23,8 @@
 						"api",
 						"products"
 					]
-				}
+				},
+				"description": "Obtener la lista de productos"
 			},
 			"response": []
 		},
@@ -43,7 +45,8 @@
 						"products",
 						"1"
 					]
-				}
+				},
+				"description": "Obtener un producto especifico."
 			},
 			"response": []
 		},
@@ -65,7 +68,8 @@
 						"1",
 						"prices"
 					]
-				}
+				},
+				"description": "Optener todos los precios asociados a un producto"
 			},
 			"response": []
 		},
@@ -95,7 +99,8 @@
 						"products",
 						"4"
 					]
-				}
+				},
+				"description": "Crear un nuevo producto"
 			},
 			"response": []
 		},
@@ -125,18 +130,19 @@
 						"products",
 						"4"
 					]
-				}
+				},
+				"description": "Modificar un producto, se usa PUT para modificar solamente un valor si fuera necesario, en este caso estamos modificando el precio del porudcto con id 4"
 			},
 			"response": []
 		},
 		{
 			"name": "Update Product Price",
 			"request": {
-				"method": "PUT",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"price\": 250\n}",
+					"raw": "{\n    \"currency_id\": 1,\n    \"price\": 250\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -144,7 +150,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://prueba-ciph3r.test/api/products/4",
+					"raw": "http://prueba-ciph3r.test/api/products/2/prices",
 					"protocol": "http",
 					"host": [
 						"prueba-ciph3r",
@@ -153,9 +159,11 @@
 					"path": [
 						"api",
 						"products",
-						"4"
+						"2",
+						"prices"
 					]
-				}
+				},
+				"description": "Modificar la relacion precio-producto, se usa PUT para modificar solamente un valor si fuera necesario, en este caso estamos modificando el precio del porudcto con id 4"
 			},
 			"response": []
 		},
@@ -176,7 +184,8 @@
 						"products",
 						"4"
 					]
-				}
+				},
+				"description": "Eliminar un producto."
 			},
 			"response": []
 		}
