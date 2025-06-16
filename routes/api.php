@@ -18,11 +18,11 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::group(['prefix' => 'products'], function () {
         Route::get('/', [ProductoController::class, 'index']);
         Route::post('/', [ProductoController::class, 'store']);
-        Route::get('/{producto}', [ProductoController::class, 'show']);
-        Route::put('/{product}', [ProductoController::class, 'update']);
-        Route::delete('/{producto}', [ProductoController::class, 'destroy']);
+        Route::get('/{id}', [ProductoController::class, 'show']);
+        Route::put('/{id}', [ProductoController::class, 'update']);
+        Route::delete('/{id}', [ProductoController::class, 'destroy']);
         /** Producto Precio */
-        Route::post('/{producto}/prices', [ProductoController::class, 'storePrices']);
-        Route::get('/{producto}/prices', [ProductoController::class, 'showPrices']);
+        Route::post('/{id}/prices', [ProductoController::class, 'storePrices']);
+        Route::get('/{id}/prices', [ProductoController::class, 'showPrices']);
     });
 });
