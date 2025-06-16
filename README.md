@@ -4,7 +4,7 @@
 La API de Gestión de Productos proporciona una forma sencilla y efectiva de gestionar productos en un sistema de inventario. Su implementación es ideal para aplicaciones de comercio electrónico, sistemas de gestión de inventario y otras plataformas que requieren un manejo eficiente de productos.
 
 ## Nota:
-La autenticación esta implementada con Passport
+La autenticación esta implementada con Laravel Passport
 # php artisan passport:install
 # php artisan migrate:fresh --seed
 
