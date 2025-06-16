@@ -6,7 +6,8 @@ La API de Gestión de Productos proporciona una forma sencilla y efectiva de ges
 ## Nota importante, la autenticacion esta implementada con Passport, despues de ejecutar
 # php artisan migrate:fresh --seed
 debes registrar un usuario y despues de registrado el usuario, ejecutar: 
-# php artisan passport:client --personal para crear el cliente para el usuario
+# php artisan passport:client --personal 
+para crear el cliente asociado al usuario
 
 ## Documentacion Completa
 <a target="_blank" href="https://documenter.getpostman.com/view/792934/2sAYk7SPay">Click aqui</a>
