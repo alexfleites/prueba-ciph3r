@@ -5,7 +5,7 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Container\Attributes\Auth;
 
 Route::get('/', function () {
-    return redirect('/admin');
+    return view('welcome');
 });
 
 Route::post('register', [AuthController::class, 'register']);

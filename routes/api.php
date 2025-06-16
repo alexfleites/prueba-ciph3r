@@ -1,26 +1,28 @@
 <?php
-
+ 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\AuthenticationController;
 use App\Http\Controllers\ProductoController;
+ 
+Route::post('register', [AuthenticationController::class, 'register'])->name('register');
+Route::post('login', [AuthenticationController::class, 'login'])->name('login');
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+Route::group(['middleware' => 'auth:api'], function () {
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
+    Route::post('logout', [AuthenticationController::class, 'logout'])->name('logout');
 
-Route::post('/tokens/create', function (Request $request) {
-    $token = $request->user()->createToken($request->token_name);
-
-    return ['token' => $token->plainTextToken];
-});
-
-Route::group(['prefix' => 'products', 'middleware' => 'auth:sanctum'], function () {
-    Route::get('/', [ProductoController::class, 'index']);
-    Route::post('/', [ProductoController::class, 'store']);
-    Route::get('/{id}', [ProductoController::class, 'show']);
-    Route::put('/{id}', [ProductoController::class, 'update']);
-    Route::delete('/{id}', [ProductoController::class, 'destroy']);
-    /** Producto Precio */
-    Route::post('/{id}/prices', [ProductoController::class, 'storePrice']);
-    Route::get('/{id}/prices', [ProductoController::class, 'showPrices']);
+    /** Productos */
+    Route::group(['prefix' => 'products'], function () {
+        Route::get('/', [ProductoController::class, 'index']);
+        Route::post('/', [ProductoController::class, 'store']);
+        Route::get('/{producto}', [ProductoController::class, 'show']);
+        Route::put('/{product}', [ProductoController::class, 'update']);
+        Route::delete('/{producto}', [ProductoController::class, 'destroy']);
+        /** Producto Precio */
+        Route::post('/{producto}/prices', [ProductoController::class, 'storePrices']);
+        Route::get('/{producto}/prices', [ProductoController::class, 'showPrices']);
+    });
 });
