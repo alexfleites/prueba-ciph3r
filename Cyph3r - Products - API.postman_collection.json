@@ -33,13 +33,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://prueba-ciph3r.test/register",
+					"raw": "http://prueba-ciph3r.test/api/register",
 					"protocol": "http",
 					"host": [
 						"prueba-ciph3r",
 						"test"
 					],
 					"path": [
+						"api",
 						"register"
 					]
 				}
@@ -64,7 +65,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Administrator\",\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"Password1_\"\n}",
+					"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"Password1_\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -72,14 +73,15 @@
 					}
 				},
 				"url": {
-					"raw": "http://prueba-ciph3r.test/register",
+					"raw": "http://prueba-ciph3r.test/api/login",
 					"protocol": "http",
 					"host": [
 						"prueba-ciph3r",
 						"test"
 					],
 					"path": [
-						"register"
+						"api",
+						"login"
 					]
 				}
 			},
@@ -88,8 +90,30 @@
 		{
 			"name": "Get User",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{ciph3r-token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
+				"url": {
+					"raw": "http://prueba-ciph3r.test/api/user",
+					"protocol": "http",
+					"host": [
+						"prueba-ciph3r",
+						"test"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				},
 				"description": "Devuelve la informacion del Usuario que esta logeado."
 			},
 			"response": []
@@ -102,7 +126,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "1|vGT5rxmzLBJj9RuLoVxGBQvfpi7AjQyt8vrlzf4ge8b5a4a4",
+							"value": "{{ciph3r-token}}",
 							"type": "string"
 						}
 					]
@@ -134,6 +158,16 @@
 		{
 			"name": "Get Product",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{ciph3r-token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [
 					{
@@ -162,6 +196,16 @@
 		{
 			"name": "Get Product Prices",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{ciph3r-token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [
 					{
@@ -196,7 +240,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTk3N2E4Zi1lODM5LTcwNjItYTM1ZS1iZGJmM2ExZjAyNzgiLCJqdGkiOiJiNTMyOTRhNjM3Njc1YjgzZGE4ZDc0MzllZWFlMTQxZTgxMTRmYzY1NjNjYWRhNjQyZjJhYTI0OTllZDk3NWY3YmI5OTUxZDViYjAyODdlOSIsImlhdCI6MTc1MDEwNzk0Ni4zNjQxNTIsIm5iZiI6MTc1MDEwNzk0Ni4zNjQxNTQsImV4cCI6MTc4MTY0Mzk0Ni4zNDA2MjYsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.RLO_D3sLkqXmmyeuz6381CMi3bjidOyMvexwSJVJKsa0J5FG14TKwWEuioCmiVivEQgDU__mucHjNPIlf8qKH7RGOB7yVXCN6x71aQOwIa5PjG-jQ4Gvn1QdOLWgPhEAuanlBrYg0g0lM6a-sqL0jz9DwRapQBQcU41A_ISzfE-1XsoUb8e-40MmyXX5v93q_b2TnQU5Q9AB0KOW6LnloUr55HkywouEPSmq0uTV8NflHGWYlh1Ll4reNg9X0x_yWdfPw-Kbp4BWWMD9kgwBXVOo1bkcomB3-qd6V9r4AKIHudBITBkkXN9aRGwki3BXnG87WzWjoUkMI9tLOtfG6zuuiYPQnjrM0-1l2JS1Dz6gcFVRHAgqIGOO_KJhOwcvyIOHkOIOrotzLbDIJY3BFoydzfJ7SJIoJdy0pxNSQAzpVHsuzppu_gxSwVPFkFdNkGZ4c0QXKFMgyq03zAszX9nInJX6YEBgsbadMRqPP5FyM5yjwyKI72B__3jaz5PmkVZDiI71iiT5B1JzRfj6VokV5nTuirLL3esMKlA8fuEvk2OdkAQpx-9qzINnzRQEWHJam5Wo_Y5FT4sp3vKANRwkE3IvukVE5F42npRlIF0ncd4tNycfxu0CGxAFpTo_93IOfN-RFCkqOd-f_QD12tscmp9PxUeTLJTnnseX668",
+							"value": "{{ciph3r-token}}",
 							"type": "string"
 						}
 					]
@@ -211,7 +255,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"user_id\": 1,\n    \"name\": \"Producto A\",\n    \"description\": \"Descripción del Producto A\",\n    \"price\": 100,\n    \"currency_id\": 1,\n    \"tax_cost\": 10,\n    \"manufacturing_cost\": 60,\n    \"created_at\": \"2025-03-10T22:46:09.000000Z\",\n    \"updated_at\": \"2025-03-10T22:46:09.000000Z\"\n}",
+					"raw": "{\n    \"user_id\": 1,\n    \"name\": \"Producto C\",\n    \"description\": \"Descripción del Producto C\",\n    \"price\": 300,\n    \"currency_id\": 1,\n    \"tax_cost\": 10,\n    \"manufacturing_cost\": 60,\n    \"created_at\": \"2025-03-10T22:46:09.000000Z\",\n    \"updated_at\": \"2025-03-10T22:46:09.000000Z\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -237,6 +281,16 @@
 		{
 			"name": "Update Product",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{ciph3r-token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PUT",
 				"header": [
 					{
@@ -247,7 +301,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"price\": 250\n}",
+					"raw": "{\n    \"name\": \"Producto Edited\",\n    \"price\": 350\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -255,7 +309,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://prueba-ciph3r.test/api/products/4",
+					"raw": "http://prueba-ciph3r.test/api/products/1",
 					"protocol": "http",
 					"host": [
 						"prueba-ciph3r",
@@ -264,7 +318,7 @@
 					"path": [
 						"api",
 						"products",
-						"4"
+						"1"
 					]
 				},
 				"description": "Modificar un producto, se usa PUT para modificar solamente un valor si fuera necesario, en este caso estamos modificando el precio del porudcto con id 4"
@@ -274,6 +328,16 @@
 		{
 			"name": "Update Product Price",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{ciph3r-token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -284,7 +348,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"currency_id\": 1,\n    \"price\": 250\n}",
+					"raw": "{\n    \"currency_id\": 1,\n    \"price\": 350\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -292,7 +356,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://prueba-ciph3r.test/api/products/2/prices",
+					"raw": "http://prueba-ciph3r.test/api/products/1/prices",
 					"protocol": "http",
 					"host": [
 						"prueba-ciph3r",
@@ -301,7 +365,7 @@
 					"path": [
 						"api",
 						"products",
-						"2",
+						"1",
 						"prices"
 					]
 				},
@@ -312,6 +376,16 @@
 		{
 			"name": "Delete Product",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{ciph3r-token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "DELETE",
 				"header": [
 					{
@@ -340,10 +414,39 @@
 		{
 			"name": "Logout User",
 			"request": {
-				"method": "GET",
-				"header": []
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{ciph3r-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://prueba-ciph3r.test/api/logout",
+					"protocol": "http",
+					"host": [
+						"prueba-ciph3r",
+						"test"
+					],
+					"path": [
+						"api",
+						"logout"
+					]
+				}
 			},
 			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "ciph3r-token",
+			"value": "",
+			"type": "default"
 		}
 	]
 }
